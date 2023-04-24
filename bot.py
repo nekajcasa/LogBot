@@ -1,7 +1,9 @@
 import discord
 import responses
-import os
 from discord.ext import commands
+
+# py datokteka v kateri je definiran token
+import keys
 
 
 async def send_message(message):
@@ -17,7 +19,7 @@ def run_discord_bot():
   intents.message_content = True
 
   client = discord.Client(intents=intents)
-  
+
   @client.event
   async def on_ready():
     print(f'We have logged in as {client.user}')
@@ -27,18 +29,17 @@ def run_discord_bot():
     if message.author == client.user:
       return
 
-    
     username = str(message.author)
     user_message = str(message.content)
     channel = str(message.channel)
     ima_kluc = False
-    
+
     print(f"{username} said: {user_message} ({channel})")
-    #preverjanje uporabnikovih "roles"
+    # preverjanje uporabnikovih "roles"
     for i in message.author.roles:
-      #preverjanje če ima avtor sporočila ključ
-      if str(i)=="🔑":
-        ima_kluc=True
+      # preverjanje če ima avtor sporočila ključ
+      if str(i) == "🔑":
+        ima_kluc = True
         print("Ima kljuc")
 
     if message.content.startswith("+") and ima_kluc:
@@ -46,4 +47,4 @@ def run_discord_bot():
     else:
       print("Nima kljuca/napačen poziv")
 
-  client.run(os.environ['TOKEN'])
+  client.run(keys.TOKEN())

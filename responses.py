@@ -10,5 +10,5 @@ def handle_response(message):
 
 
 def rezerviraj_termin(message):
-  
+
   return "Označen termin !"
