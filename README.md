@@ -1,0 +1,3 @@
+# LogBot
+
+Discord bot, za logiranje ur...
