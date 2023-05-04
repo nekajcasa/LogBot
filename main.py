@@ -74,7 +74,7 @@ class MyClient(discord.Client):
                     print("Ima kljuc")
 
             if ima_kluc:
-                if channel == "bot-tes":
+                if channel == "treningi":
                     sporocilo = responses.handle_response(user_message)
                     zacetek = sporocilo[0]
 
