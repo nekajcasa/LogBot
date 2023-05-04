@@ -61,6 +61,10 @@ class MyClient(discord.Client):
             sporocilo = responses.handle_response(user_message)
             if sporocilo == "!help":
                 resp = responses.help()
+            if sporocilo == "data":
+                resp=f"Poročilo za {self.danes.datum}:\n"
+                for i in range(len(self.danes.events)):
+                    resp += f"ZT {i+1}: {self.danes.events[i].prihod} do {self.danes.events[i].odhod}\n"
             else:
                 resp = "Napačen vnos, napiši '!help' za pomoč ali kontaktiraj admina."
             await message.author.send(resp)
@@ -81,27 +85,21 @@ class MyClient(discord.Client):
                     # dodajanje termina
                     if zacetek == "+":
                         self.danes, resp = responses.rezerviraj_termin(sporocilo, username, self.danes)
-                        if resp[0] == "N":
-                            await message.author.send(resp)
-                        else:
-                            await message.channel.send(resp)
 
                     # brisanje termina
                     if sporocilo.replace(" ", "") == "!menebo":
                         self.danes, resp = responses.odstrani_termin(sporocilo, username, self.danes)
-                        if resp[0] == "N":
-                            await message.author.send(resp)
-                        else:
-                            await message.channel.send(resp)
 
-                    if sporocilo == "data":
-                        print()
-                        print(f"Poročilo za {self.danes.datum}:")
-                        for i in range(len(self.danes.events)):
-                            print(f"ZT {i+1}: {self.danes.events[i].prihod} do {self.danes.events[i].odhod}")
+                    #pošiljanje odziva
+                    if resp[0] == "N":
+                        await message.author.send(resp)
+                    else:
+                        await message.channel.send(resp)
+
                 else:
-                    resp = "Ukaze za termine se sprejema samo v kanalu 'treningi' !."
-                    await message.author.send(resp)
+                    if zacetek == "+" or sporocilo.replace(" ", "") == "!menebo":
+                        resp = "Ukaze za termine se sprejema samo v kanalu 'treningi' !."
+                        await message.author.send(resp)
 
 
 if __name__ == '__main__':
