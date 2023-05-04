@@ -61,8 +61,8 @@ class MyClient(discord.Client):
             sporocilo = responses.handle_response(user_message)
             if sporocilo == "!help":
                 resp = responses.help()
-            if sporocilo == "data":
-                resp=f"Poročilo za {self.danes.datum}:\n"
+            elif sporocilo == "data":
+                resp = f"Poročilo za {self.danes.datum}:\n"
                 for i in range(len(self.danes.events)):
                     resp += f"ZT {i+1}: {self.danes.events[i].prihod} do {self.danes.events[i].odhod}\n"
             else:
@@ -90,7 +90,7 @@ class MyClient(discord.Client):
                     if sporocilo.replace(" ", "") == "!menebo":
                         self.danes, resp = responses.odstrani_termin(sporocilo, username, self.danes)
 
-                    #pošiljanje odziva
+                    # pošiljanje odziva
                     if resp[0] == "N":
                         await message.author.send(resp)
                     else:
