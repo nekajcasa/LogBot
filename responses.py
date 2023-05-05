@@ -349,7 +349,7 @@ class Dan:
 
         if self.datum.day == 1:
             print("pošiljanje stare tabele")
-            zadnji_ID = db.get_values(Main_ID, "B1:B1000")["values"][-1][0]
+            zadnji_ID = db.get_values(secret.Main_sheet_ID(), "B1:B1000")["values"][-1][0]
 
             for mail in secret.mail_list():
                 print(f"Mail poslan na {mail}.")
