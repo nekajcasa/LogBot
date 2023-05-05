@@ -22,8 +22,6 @@ Potrebni paketi:
 * pip install oauth2client
 
 ## To do:
-* dodaten kanal samo za testiranje,
 * Urediti GCS problemi z izklaplanjem (https://www.digitalocean.com/community/tutorials/nohup-command-in-linux),
-* Dodati ukaz za ročni zaklucek dneva,
 * Hranjenje podatkov dneva v Sheets in ne v spremenljivki (Če  se program tekom dneva sesuje)
 * avtomatski sestevek ur za mesec v sheets
