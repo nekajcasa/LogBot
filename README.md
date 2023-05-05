@@ -2,7 +2,7 @@
 
 Discord bot, za logiranje ur...
 
-proces zagona:
+### Proces zagona:
 
 SHH to VM
 
@@ -18,3 +18,8 @@ Potrebni paketi:
 * pip install discord
 * pip install datetime
 * pip install oauth2client
+
+## To do:
+* Urediti CGS problemis izklaplanjem
+* Dodati ukaz za ročni zaklucek dneva
+* Hranjenje podatkov dneva v Sheets in ne v spremenljivki (Če  se program tekom dneva sesuje)
