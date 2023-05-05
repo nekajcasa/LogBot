@@ -65,6 +65,18 @@ class MyClient(discord.Client):
                 resp = f"Poročilo za {self.danes.datum}:\n"
                 for i in range(len(self.danes.events)):
                     resp += f"ZT {i+1}: {self.danes.events[i].prihod} do {self.danes.events[i].odhod}\n"
+            elif sporocilo == "zaključi":
+                if len(self.danes.events) > 0:
+                    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+                    resp = "Dan zaključen - dogodki združeni"
+                    # če ni isti dan se zpaišejo podatki
+                else:
+                    zdruzeni_dogodki = []
+                    resp = "Dan zaključen - ni bilo dogodkov"
+                # zaključek dneva -> zapis v tabelo, če je konec meseca nova tabela in poročilo
+                self.danes.zaključi_dan(zdruzeni_dogodki)
+                self.danes = responses.Dan(date.today())
+
             else:
                 resp = "Napačen vnos, napiši '!help' za pomoč ali kontaktiraj admina."
             await message.author.send(resp)
@@ -78,7 +90,7 @@ class MyClient(discord.Client):
                     print("Ima kljuc")
 
             if ima_kluc:
-                if channel == "treningi":
+                if channel == "treningi" or channel == "bot-test":
                     sporocilo = responses.handle_response(user_message)
                     zacetek = sporocilo[0]
 
