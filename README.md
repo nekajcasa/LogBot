@@ -3,15 +3,16 @@
 Discord bot, za logiranje ur...
 
 ### Proces zagona:
+Do sedaj:
+* SSH to VM
+* (python3 -m venv venv)
+* source venv/bin/activate
+* python3 main.py  ali nohup python3 -u main.py &>> activity.log &
 
-SHH to VM
-
-(python3 -m venv venv)
-
-source venv/bin/activate
-
-python3 main.py  ali nohup python3 -u main.py &>> activity.log &
-
+Na testu:
+* SSH to VM
+* nohup main.py > output.txt
+* (cat output.txt)(za pregled output.txt)
 
 Potrebni paketi:
 * pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
