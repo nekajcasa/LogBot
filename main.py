@@ -93,19 +93,21 @@ class MyClient(discord.Client):
                 if channel == "treningi" or channel == "bot-test":
                     sporocilo = responses.handle_response(user_message)
                     zacetek = sporocilo[0]
-
+                    veljavno_sporocilo = False
                     # dodajanje termina
                     if zacetek == "+":
                         self.danes, resp = responses.rezerviraj_termin(sporocilo, username, self.danes)
+                        veljavno_sporocilo = True
                     # brisanje termina
                     if sporocilo.replace(" ", "") == "!menebo":
                         self.danes, resp = responses.odstrani_termin(sporocilo, username, self.danes)
-
+                        veljavno_sporocilo = True
                     # pošiljanje odziva
-                    if resp[0] == "N":
-                        await message.author.send(resp)
-                    else:
-                        await message.channel.send(resp)
+                    if veljavno_sporocilo:
+                        if resp[0] == "N":
+                            await message.author.send(resp)
+                        else:
+                            await message.channel.send(resp)
 
                 else:
                     if zacetek == "+" or sporocilo.replace(" ", "") == "!menebo":

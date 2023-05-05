@@ -383,8 +383,9 @@ class Dan:
             print(f"Poročilo za {self.datum}:")
 
             skupni_cas = datetime.timedelta(0)
+            i = 0
             for dogodek in zdruzeni_dogodki:
-
+                i += 1
                 prihod = dogodek.prihod
                 odhod = dogodek.odhod
                 t1 = datetime.datetime(self.datum.year, self.datum.month, self.datum.day, prihod.hour, prihod.minute)
