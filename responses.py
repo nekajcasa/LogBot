@@ -396,7 +396,7 @@ class Dan:
                 print(f"ZT {i+1}: {prihod} do {odhod}")
 
                 zadnja_vrstica_A = len(db.get_values(zadnji_ID, "A1:A1000")["values"])
-                db.update_values(zadnji_ID, f"A{zadnja_vrstica_A+1}:D{zadnja_vrstica_A+1}", "USER_ENTERED", [[str(datum), str(prihod), str(odhod), str(cas)]])
+                db.update_values(zadnji_ID, f"A{zadnja_vrstica_A+1}:D{zadnja_vrstica_A+1}", "USER_ENTERED", [[str(self.datum), str(prihod), str(odhod), str(cas)]])
 
             zadnja_vrstica_E = len(db.get_values(zadnji_ID, "E1:E1000")["values"])
             db.append_values(zadnji_ID, f"E{zadnja_vrstica_E+1}:F{zadnja_vrstica_E+1}", "USER_ENTERED", [[str(self.datum), str(skupni_cas)]])
