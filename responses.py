@@ -345,6 +345,8 @@ class Dan:
         """Funkcija zaključi dan tako da zapiše dogodke v tabeleo, če je konec meseca naredi
         novo tabelo in pošlje staro tabelo mail_listi"""
 
+        db = GSDB.DB("gs_credentials.json")
+
         if self.datum.day == 1:
             print("pošiljanje stare tabele")
             zadnji_ID = db.get_values(Main_ID, "B1:B1000")["values"][-1][0]
