@@ -11,7 +11,7 @@ Do sedaj:
 
 Na testu:
 * SSH to VM
-* nohup main.py > output.txt
+* nohup main.py > output.txt &
 * (cat output.txt)(za pregled output.txt)
 
 Potrebni paketi:
