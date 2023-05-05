@@ -20,6 +20,7 @@ Potrebni paketi:
 * pip install oauth2client
 
 ## To do:
-* Urediti CGS problemi z izklaplanjem
-* Dodati ukaz za ročni zaklucek dneva
+* dodaten kanal samo za testiranje,
+* Urediti CGS problemi z izklaplanjem,
+* Dodati ukaz za ročni zaklucek dneva,
 * Hranjenje podatkov dneva v Sheets in ne v spremenljivki (Če  se program tekom dneva sesuje)
