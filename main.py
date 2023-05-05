@@ -79,7 +79,6 @@ class MyClient(discord.Client):
 
             else:
                 resp = "Napačen vnos, napiši '!help' za pomoč ali kontaktiraj admina."
-            pront("T0")
             await message.author.send(resp)
 
         else:
@@ -98,7 +97,6 @@ class MyClient(discord.Client):
                     # dodajanje termina
                     if zacetek == "+":
                         self.danes, resp = responses.rezerviraj_termin(sporocilo, username, self.danes)
-                        print("T1" + resp)
                     # brisanje termina
                     if sporocilo.replace(" ", "") == "!menebo":
                         self.danes, resp = responses.odstrani_termin(sporocilo, username, self.danes)
@@ -107,7 +105,6 @@ class MyClient(discord.Client):
                     if resp[0] == "N":
                         await message.author.send(resp)
                     else:
-                        print("T2")
                         await message.channel.send(resp)
 
                 else:
