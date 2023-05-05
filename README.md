@@ -11,8 +11,9 @@ Do sedaj:
 
 Na testu:
 * SSH to VM
-* nohup main.py > output.txt &
+* nohup python3 main.py > output.txt &
 * (cat output.txt)(za pregled output.txt)
+* kill _ID_
 
 Potrebni paketi:
 * pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
