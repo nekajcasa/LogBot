@@ -22,6 +22,9 @@ Potrebni paketi:
 * pip install oauth2client
 
 ## To do:
-* Urediti GCS problemi z izklaplanjem (https://www.digitalocean.com/community/tutorials/nohup-command-in-linux),
+* Hranjenje e-mail naslovov v Sheets namesto v secrets
 * Hranjenje podatkov dneva v Sheets in ne v spremenljivki (Če  se program tekom dneva sesuje)
 * avtomatski sestevek ur za mesec v sheets
+<!-- 
+* Urediti GCS problemi z izklaplanjem (https://www.digitalocean.com/community/tutorials/nohup-command-in-linux),
+-->
