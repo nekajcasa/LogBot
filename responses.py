@@ -360,21 +360,27 @@ class Dan:
             date_new_month = str(self.datum.year) + "-" + str(self.datum.month)
             id_new_month, link_new_month = db.create(date_new_month)
 
+            #Za normaln delovoanje
             db.append_values(secret.Main_sheet_ID(), "A1:A1000", "USER_ENTERED", [[date_new_month, id_new_month, link_new_month]])
-
             # Samo za testiranje
             #id_new_month = secret.test_sheet_ID()
+            
             # Urejanje tebele
             db.update_values(id_new_month, "A1", "USER_ENTERED",
                              [['Vsa uporaba']])
-
+            db.mrge_cells(id_new_month, 0, 4, 0, 1)
             db.update_values(id_new_month, "E1", "USER_ENTERED",
                              [['Po dnevih']])
-
-            db.update_values(id_new_month, "A2:F2", "USER_ENTERED",
-                             [['Dan', 'do', 'do', 'Čas', 'Dan', 'Čas']])
-            db.mrge_cells(id_new_month, 0, 4, 0, 1)
             db.mrge_cells(id_new_month, 4, 6, 0, 1)
+            db.update_values(id_new_month, "A2:F2", "USER_ENTERED",
+                             [['Dan', 'do', 'do', 'Čas', 'Dan', 'Čas']])          
+            db.update_values(id_new_month, "G1", "USER_ENTERED",
+                             [['Skupno']])
+            db.update_values(id_new_month, "G1", "USER_ENTERED",
+                             [['=sum(F3:F100)']])
+            db.format_cell_time(id_new_month, 6, 7, 2, 3)            
+            
+            
 
         zadnji_ID = db.get_values(secret.Main_sheet_ID(), "B1:B1000")["values"][-1][0]
 
@@ -415,7 +421,6 @@ class Event:
 def simulacija_disc(inputi, dnevi, user="User1"):
     """Funkcija namenja testiranju kode v terminalu... kjer se izpise BOT:, pomeni da se to vrne v discord,
     drugače je izpis v terminal"""
-    db = GSDB.DB("gs_credentials.json")
 
     for d in range(len(dnevi)):
         danes = Dan(dnevi[d])

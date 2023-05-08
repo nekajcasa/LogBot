@@ -115,7 +115,47 @@ class DB():
                     'endRowIndex': Er,
                     'sheetId': sheet_id,
                     'startColumnIndex': Sc,
-                    'startRowIndex': Sr}}}]
+                    'startRowIndex': Sr}
+                }
+                }
+            ]
+
+        self.service.spreadsheets().batchUpdate(
+            spreadsheetId=Spreadsheet_ID,
+            body={'requests': top_header_format}
+        ).execute()
+        
+        
+    def format_cell_time(self, Spreadsheet_ID, Sc, Ec, Sr, Er):
+        """Združevanje zelic od Sc-StartColumn, Ec-Endcoum,Sr-StartRow,Er-EndRow"""
+        spreadsheet = self.service.spreadsheets().get(spreadsheetId=Spreadsheet_ID).execute()
+
+        sheet_id = None
+        for _sheet in spreadsheet['sheets']:
+            if _sheet['properties']['title'] == "Sheet1":
+                sheet_id = _sheet['properties']['sheetId']
+
+        
+        top_header_format =[
+                {"repeatCell": {
+                    'range': {
+                        'endColumnIndex': Ec,
+                        'endRowIndex': Er,
+                        'sheetId': sheet_id,
+                        'startColumnIndex': Sc,
+                        'startRowIndex': Sr
+                        },
+                    "cell":{
+                        "userEnteredFormat":{
+                            "numberFormat":{
+                                "pattern": "[h]:mm:",
+                                "type": "DATE_TIME"
+                                }
+                            }
+                        }
+                    }
+                    }
+                ]
 
         self.service.spreadsheets().batchUpdate(
             spreadsheetId=Spreadsheet_ID,
