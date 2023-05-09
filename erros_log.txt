@@ -1,0 +1,546 @@
+[2023-05-05 19:06:15] [INFO    ] discord.client: logging in using static token
+[2023-05-05 19:06:16] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: fd306641ab1f4577488f406cce829944).
+[2023-05-05 19:08:09] [ERROR   ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "main.py", line 77, in on_message
+    self.danes.zaključi_dan(zdruzeni_dogodki)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 377, in zaključi_dan
+    zadnji_ID = db.get_values(secret.Main_sheet_ID(), "B1:B1000")["values"][-1][0]
+NameError: name 'db' is not defined
+[2023-05-05 19:18:32] [INFO    ] discord.client: logging in using static token
+[2023-05-05 19:18:33] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: 23f1420e4c981c28413cced6aa830781).
+[2023-05-05 19:47:18] [INFO    ] discord.client: logging in using static token
+[2023-05-05 19:47:18] [INFO    ] discord.gateway: Shard ID None has connected to Gateway (Session ID: aa74174350c300732227f0dc4d8783b8).
+[2023-05-05 21:07:56] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-06 00:06:58] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-06 02:00:27] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-06 04:48:17] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-06 05:10:25] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-06 07:28:39] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-06 10:36:32] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-06 12:58:28] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-06 14:24:39] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-06 18:22:06] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-06 19:03:38] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-06 21:52:30] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-07 01:08:49] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-07 01:35:52] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-07 05:28:37] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-07 05:47:31] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-07 06:50:23] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-07 07:53:48] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-07 09:11:16] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-07 11:29:15] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-07 14:38:31] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-07 15:58:35] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-07 19:16:06] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-07 22:13:06] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 01:48:43] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 02:30:13] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 03:28:07] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 06:52:01] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 07:31:10] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 10:15:42] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 10:39:36] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 11:20:47] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 11:45:04] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 12:14:36] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 13:21:25] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 14:34:09] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 15:05:00] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 15:16:13] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 16:05:46] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 18:37:59] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 19:08:47] [ERROR   ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "main.py", line 113, in on_message
+    if zacetek == "+" or sporocilo.replace(" ", "") == "!menebo":
+UnboundLocalError: local variable 'zacetek' referenced before assignment
+[2023-05-08 19:09:38] [ERROR   ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "main.py", line 113, in on_message
+    if zacetek == "+" or sporocilo.replace(" ", "") == "!menebo":
+UnboundLocalError: local variable 'zacetek' referenced before assignment
+[2023-05-08 19:11:00] [ERROR   ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "main.py", line 113, in on_message
+    if zacetek == "+" or sporocilo.replace(" ", "") == "!menebo":
+UnboundLocalError: local variable 'zacetek' referenced before assignment
+[2023-05-08 19:46:03] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 19:59:07] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 21:02:02] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 21:44:52] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 23:34:24] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-09 00:07:34] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 197, in združevanje_terminov
+    for j in range(len(events)):
+
+[2023-05-09 00:07:44] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 196, in združevanje_terminov
+    for i in range(len(events)):
+
+[2023-05-08 15:16:13] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 16:05:46] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 18:37:59] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 19:08:47] [ERROR   ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "main.py", line 113, in on_message
+    if zacetek == "+" or sporocilo.replace(" ", "") == "!menebo":
+UnboundLocalError: local variable 'zacetek' referenced before assignment
+[2023-05-08 19:09:38] [ERROR   ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "main.py", line 113, in on_message
+    if zacetek == "+" or sporocilo.replace(" ", "") == "!menebo":
+UnboundLocalError: local variable 'zacetek' referenced before assignment
+[2023-05-08 19:11:00] [ERROR   ] discord.client: Ignoring exception in on_message
+Traceback (most recent call last):
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 441, in _run_event
+    await coro(*args, **kwargs)
+  File "main.py", line 113, in on_message
+    if zacetek == "+" or sporocilo.replace(" ", "") == "!menebo":
+UnboundLocalError: local variable 'zacetek' referenced before assignment
+[2023-05-08 19:46:03] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 19:59:07] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 21:02:02] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 21:44:52] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-08 23:34:24] [INFO    ] discord.gateway: Shard ID None has successfully RESUMED session aa74174350c300732227f0dc4d8783b8.
+[2023-05-09 00:07:34] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 10 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 197, in združevanje_terminov
+    for j in range(len(events)):
+
+[2023-05-09 00:07:44] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 20 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 196, in združevanje_terminov
+    for i in range(len(events)):
+
+[2023-05-09 00:07:54] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 30 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 197, in združevanje_terminov
+    for j in range(len(events)):
+
+[2023-05-09 00:08:04] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 40 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 196, in združevanje_terminov
+    for i in range(len(events)):
+
+[2023-05-09 00:08:14] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 50 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 196, in združevanje_terminov
+    for i in range(len(events)):
+
+[2023-05-09 00:08:25] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 60 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 196, in združevanje_terminov
+    for i in range(len(events)):
+
+[2023-05-09 00:08:35] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 70 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 193, in združevanje_terminov
+    while over[0] == "T":
+
+[2023-05-09 00:08:45] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 80 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 196, in združevanje_terminov
+    for i in range(len(events)):
+
+[2023-05-09 00:08:55] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 90 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 194, in združevanje_terminov
+    stev += 1
+
+[2023-05-09 00:09:05] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 100 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 198, in združevanje_terminov
+    if j > i:
+
+[2023-05-09 00:09:15] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 110 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 197, in združevanje_terminov
+    for j in range(len(events)):
+
+[2023-05-09 00:09:25] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 120 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 196, in združevanje_terminov
+    for i in range(len(events)):
+
+[2023-05-09 00:09:36] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 130 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 196, in združevanje_terminov
+    for i in range(len(events)):
+
+[2023-05-09 00:09:46] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 140 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 197, in združevanje_terminov
+    for j in range(len(events)):
+
+[2023-05-09 00:09:56] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 150 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 197, in združevanje_terminov
+    for j in range(len(events)):
+
+[2023-05-09 00:10:06] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 160 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 197, in združevanje_terminov
+    for j in range(len(events)):
+
+[2023-05-09 00:10:17] [WARNING ] discord.gateway: Shard ID None heartbeat blocked for more than 170 seconds.
+Loop thread traceback (most recent call last):
+  File "main.py", line 123, in <module>
+    client.run(secret.TOKEN())
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/client.py", line 860, in run
+    asyncio.run(runner())
+  File "/usr/lib/python3.8/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 603, in run_until_complete
+    self.run_forever()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 570, in run_forever
+    self._run_once()
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 1859, in _run_once
+    handle._run()
+  File "/usr/lib/python3.8/asyncio/events.py", line 81, in _run
+    self._context.run(self._callback, *self._args)
+  File "/home/tak_domzale_bot/LogBot/venv/lib/python3.8/site-packages/discord/ext/tasks/__init__.py", line 239, in _loop
+    await self.coro(*args, **kwargs)
+  File "main.py", line 31, in my_background_task
+    zdruzeni_dogodki = responses.združevanje_terminov(self.danes.events)
+  File "/home/tak_domzale_bot/LogBot/responses.py", line 196, in združevanje_terminov
+    for i in range(len(events)):
