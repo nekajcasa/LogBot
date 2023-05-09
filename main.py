@@ -3,7 +3,7 @@ import secret
 import discord
 import responses
 from datetime import date
-from datetime import time
+
 
 
 class MyClient(discord.Client):
