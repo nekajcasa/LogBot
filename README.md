@@ -3,15 +3,16 @@
 Discord bot, za logiranje ur...
 
 ### Proces zagona:
-Do sedaj:
+<!--Do sedaj:
 * SSH to VM
 * (python3 -m venv venv)
 * source venv/bin/activate
 * python3 main.py  ali nohup python3 -u main.py &>> activity.log &
 
-Na testu:
+Na testu:-->
 * SSH to VM
-* nohup python3 main.py > output.txt &
+* source venv/bin/activate
+* nohup python3 main.py &> output.txt &
 * (cat output.txt)(za pregled output.txt)
 * kill _ID_
 
