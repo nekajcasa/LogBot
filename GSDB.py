@@ -166,22 +166,25 @@ class DB():
     def format_sheet(self,Spreadsheet_ID):
         # Urejanje tebele
         self.update_values(Spreadsheet_ID, "A1", "USER_ENTERED",
-                         [['Vsa uporaba']])
-        self.mrge_cells(Spreadsheet_ID, 0, 4, 0, 1)
-        self.update_values(Spreadsheet_ID, "E1", "USER_ENTERED",
-                         [['Po dnevih']])
-        self.mrge_cells(Spreadsheet_ID, 4, 6, 0, 1)
-        self.update_values(Spreadsheet_ID, "A2:F2", "USER_ENTERED",
-                         [['Dan', 'do', 'do', 'Čas', 'Dan', 'Čas']])
-        self.format_cell_time(Spreadsheet_ID,  0, 1, 2, 1000,form="dd.mm.yyyy")
-        self.format_cell_time(Spreadsheet_ID,  1, 4, 2, 1000) 
-        self.update_values(Spreadsheet_ID, "G1", "USER_ENTERED",
-                         [['Skupno']])
-        self.format_cell_time(Spreadsheet_ID,  4, 5, 2, 1000,form="dd.mm.yyyy")
-        self.format_cell_time(Spreadsheet_ID,  5, 6, 2, 1000)
-        self.update_values(Spreadsheet_ID, "G2", "USER_ENTERED",
-                         [['=sum(F3:F100)']])
-        self.format_cell_time(Spreadsheet_ID,  6, 7, 1, 2)     
+                         [['Vsi obiski']])
+        self.mrge_cells(Spreadsheet_ID, 0, 5, 0, 1)
+        self.update_values(Spreadsheet_ID, "F1", "USER_ENTERED",
+                         [['Uporaba prostora']])
+        self.mrge_cells(Spreadsheet_ID, 5, 9, 0, 1)
+        self.update_values(Spreadsheet_ID, "A2:K2", "USER_ENTERED",
+                         [['Dan','Kdo', 'do', 'do', 'Čas',
+                           'Dan', 'do', 'do', 'Čas',
+                           'Dan', 'Čas']])
+        self.update_values(Spreadsheet_ID, "J1", "USER_ENTERED",
+                         [['Skupaj:']])
+        self.update_values(Spreadsheet_ID, "K1", "USER_ENTERED",
+                         [['=sum(K3:K100)']])
+        #formatiranje da bo pravilen zapis
+        self.format_cell_time(Spreadsheet_ID,  5, 6, 2, 1000,form="dd.mm.yyyy")
+        self.format_cell_time(Spreadsheet_ID,  6, 9, 2, 1000) 
+        self.format_cell_time(Spreadsheet_ID,  9, 10, 2, 1000,form="dd.mm.yyyy")
+        self.format_cell_time(Spreadsheet_ID,  10, 11, 2, 1000)
+        self.format_cell_time(Spreadsheet_ID,  11, 12, 0, 1)     
 
 
 if __name__ == '__main__':
@@ -229,9 +232,9 @@ if __name__ == '__main__':
 #     db.update_values(zadnji_ID, f"A{zadnja_vrstica_A+1}:D{zadnja_vrstica_A+1}", "USER_ENTERED", [[datum, prihod, odhod, cas]])
 # 
 #     zadnja_vrstica_E = len(db.get_values(zadnji_ID, "E1:E1000")["values"])
-#     db.append_values(zadnji_ID, f"E{zadnja_vrstica_E+1}:F{zadnja_vrstica_E+1}", "USER_ENTERED", [[datum, cas]])
+#     db.append_values(zadnji_ID, f"E{zadnja_vrstica_E+1}:F{zadnja_vrstica_E+1}", "USER_ENTERED", [[datum, cas]])    
+#     
 # =============================================================================
     db = DB("gs_credentials.json")
-    ID="1ZLik3PALAO_UHDoDc98osjC39Z50MtMJkqZB99uJk7g"
+    ID="1QLImEUuw7aagi5O73ADGtC0amjhLsWg1tboOMpGHbf4"
     db.format_sheet(ID)
-    
