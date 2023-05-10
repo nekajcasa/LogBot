@@ -149,7 +149,7 @@ class DB():
                         "userEnteredFormat":{
                             "numberFormat":{
                                 "type": "DATE_TIME",
-                                "pattern": "[hh]:mm:"
+                                "pattern": "[hh]:mm"
                                 }
                             }
                         },

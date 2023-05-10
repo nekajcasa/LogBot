@@ -380,7 +380,7 @@ class Dan:
                              [['Skupno']])
             db.update_values(id_new_month, "G2", "USER_ENTERED",
                              [['=sum(F3:F100)']])
-            #db.format_cell_time(id_new_month, 7, 10, 2, 5)            
+            db.format_cell_time(id_new_month,  6, 7, 1, 2)            
             
             
 
