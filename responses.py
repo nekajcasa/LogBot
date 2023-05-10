@@ -193,6 +193,8 @@ def združevanje_terminov(events, debug=False):
     while over[0] == "T":
         stev += 1
         overlap_najden = False
+        if len(events)==1:
+            break
         for i in range(len(events)):
             for j in range(len(events)):
                 if j > i:
@@ -376,9 +378,9 @@ class Dan:
                              [['Dan', 'do', 'do', 'Čas', 'Dan', 'Čas']])          
             db.update_values(id_new_month, "G1", "USER_ENTERED",
                              [['Skupno']])
-            db.update_values(id_new_month, "G1", "USER_ENTERED",
+            db.update_values(id_new_month, "G2", "USER_ENTERED",
                              [['=sum(F3:F100)']])
-            db.format_cell_time(id_new_month, 6, 7, 2, 3)            
+            #db.format_cell_time(id_new_month, 7, 10, 2, 5)            
             
             
 
@@ -434,7 +436,7 @@ def simulacija_disc(inputi, dnevi, user="User1"):
             if sporočilo == "d":
                 # konec dneva, v pravi kodi se proži preko preverjanja ure
                 # združevanje terminov ki se prekviajo
-                zdruzeni_dogodki = združevanje_terminov(danes.events)
+                zdruzeni_dogodki = združevanje_terminov(danes.events,debug=True)
 
                 danes.zaključi_dan(zdruzeni_dogodki)
 
@@ -456,10 +458,10 @@ def simulacija_disc(inputi, dnevi, user="User1"):
 if __name__ == "__main__":
     print(secret.mail_list())
     leto = 2023
-    mesec = 4
+    mesec = 6
 
     # vnosi po simuliranih dnevih
-    inputi = [["+8", "+15:00", "+17-18", "+19:03za30", "+9za130", "d"],
+    inputi = [["+15", "+16:15", "+13:45-15", "+16", "d"],
               ["+10", "+8", "+15:00", "+16za30", "d"],
               ["+10", "+8", "!Me ne bo", "+15.00", "+16-17", "d"],
               ["+15za30", "+16:00-18", "d"],

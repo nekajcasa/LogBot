@@ -139,20 +139,21 @@ class DB():
         top_header_format =[
                 {"repeatCell": {
                     'range': {
-                        'endColumnIndex': Ec,
-                        'endRowIndex': Er,
                         'sheetId': sheet_id,
+                        'startRowIndex': Sr,
+                        'endRowIndex': Er,
                         'startColumnIndex': Sc,
-                        'startRowIndex': Sr
+                        'endColumnIndex': Ec,
                         },
                     "cell":{
                         "userEnteredFormat":{
                             "numberFormat":{
-                                "pattern": "[h]:mm:",
-                                "type": "DATE_TIME"
+                                "type": "DATE_TIME",
+                                "pattern": "[hh]:mm:"
                                 }
                             }
-                        }
+                        },
+                    "fields": "userEnteredFormat"
                     }
                     }
                 ]
