@@ -184,8 +184,8 @@ class DB():
         self.format_cell_time(Spreadsheet_ID,  6, 9, 2, 1000) 
         self.format_cell_time(Spreadsheet_ID,  9, 10, 2, 1000,form="dd.mm.yyyy")
         self.format_cell_time(Spreadsheet_ID,  10, 11, 2, 1000)
-        self.format_cell_time(Spreadsheet_ID,  11, 12, 0, 1)     
-
+        self.format_cell_time(Spreadsheet_ID,  11, 12, 0, 1)
+    
 
 if __name__ == '__main__':
 # =============================================================================
@@ -237,4 +237,4 @@ if __name__ == '__main__':
 # =============================================================================
     db = DB("gs_credentials.json")
     ID="1QLImEUuw7aagi5O73ADGtC0amjhLsWg1tboOMpGHbf4"
-    db.format_sheet(ID)
+    print(db.get_values(ID, "A1:A1000")['values'])

@@ -201,7 +201,7 @@ def združevanje_terminov(events, debug=False):
                     T1 = events[i]
                     T2 = events[j]
                     over = overlap(T1, T2)
-
+                    datum = events[j].datum
                     if debug:
                         # izpis za namene analize kode
                         print(f"T{i}: {T1.prihod}-{T1.odhod}")
@@ -211,17 +211,17 @@ def združevanje_terminov(events, debug=False):
                     # če se dogodka prkrivata ju združi
                     if over[0] == "T":
                         if over[1] == "0":
-                            zdruzen_termin = Event(T1.prihod, T2.odhod, "Skupinsko")
+                            zdruzen_termin = Event(T1.prihod, T2.odhod, "Skupinsko",datum)
                         elif over[1] == "1":
-                            zdruzen_termin = Event(T2.prihod, T1.odhod, "Skupinsko")
+                            zdruzen_termin = Event(T2.prihod, T1.odhod, "Skupinsko",datum)
                         elif over[1] == "2":
-                            zdruzen_termin = Event(T1.prihod, T1.odhod, "Skupinsko")
+                            zdruzen_termin = Event(T1.prihod, T1.odhod, "Skupinsko",datum)
                         elif over[1] == "3":
-                            zdruzen_termin = Event(T2.prihod, T2.odhod, "Skupinsko")
+                            zdruzen_termin = Event(T2.prihod, T2.odhod, "Skupinsko",datum)
                         elif over[1] == "4":
-                            zdruzen_termin = Event(T1.prihod, T2.odhod, "Skupinsko")
+                            zdruzen_termin = Event(T1.prihod, T2.odhod, "Skupinsko",datum)
                         else:
-                            zdruzen_termin = Event(T2.prihod, T1.odhod, "Skupinsko")
+                            zdruzen_termin = Event(T2.prihod, T1.odhod, "Skupinsko",datum)
 
                         if debug:
                             # izpis za namene analize kode
@@ -262,7 +262,7 @@ def help():
     -> '!Me ne bo' - odstrani se zadnji dodani termin (v dnevu)
 
     Če imaš težave kontaktiraj admina.`"""
-    return navodila
+    return navodila   
 
 
 def odstrani_termin(message, user, dan):
@@ -292,25 +292,40 @@ def rezerviraj_termin(message, user, dan, debug=False):
         if debug:
             # izpis za namene analize kode
             print(termin)
-
+    
         # preverjanje zapisa termina
         if (termin):
             termin = termin.split("-")
-
+    
             ps = termin[0].split(":")
             os = termin[1].split(":")
-
+    
             prihod = time(int(ps[0]), int(ps[1]), 0, 0)
             odhod = time(int(os[0]), int(os[1]), 0, 0)
-
+            
+            obisk = Event(prihod, odhod, user, dan.datum)
             # dodanjanje termina dnevu
-            dan.events.append(Event(prihod, odhod, user))
-
+            dan.events.append(obisk)
+            
+            #dodajanje še v sheets
+            
+            zadnji_ID = dan.db.get_values(secret.Main_sheet_ID(), "B1:B1000")["values"][-1][0]
+            #zadnji_ID=secret.test_sheet_ID()
+            zadnja_vrstica_A = len(dan.db.get_values(zadnji_ID, "A1:A1000")["values"])
+            dan.db.update_values(zadnji_ID,
+                             f"A{zadnja_vrstica_A+1}:E{zadnja_vrstica_A+1}",
+                             "USER_ENTERED",
+                             [[str(obisk.datum),
+                               str(obisk.oseba),
+                               str(obisk.prihod),
+                               str(obisk.odhod),
+                               str(obisk.cas)]])
+    
             response = f"Dodan termin od {termin[0]} do {termin[1]}."
         else:
-            response = "Napačen vnos, napiši '!help' za pomoč ali kontaktiraj admina."
+            response = "0Napačen vnos, napiši '!help' za pomoč ali kontaktiraj admina."
     except:
-        response = "Napačen vnos, napiši '!help' za pomoč ali kontaktiraj admina."
+        response = "1Napačen vnos, napiši '!help' za pomoč ali kontaktiraj admina."
 
     return dan, response
 
@@ -342,37 +357,36 @@ class Dan:
         self.datum = datum
         self.events = []
         self.uporaba = []
+        self.db = GSDB.DB("gs_credentials.json")
 
     def zaključi_dan(self, zdruzeni_dogodki):
         """Funkcija zaključi dan tako da zapiše dogodke v tabeleo, če je konec meseca naredi
         novo tabelo in pošlje staro tabelo mail_listi"""
 
-        db = GSDB.DB("gs_credentials.json")
 
         if self.datum.day == 1:
             print("pošiljanje stare tabele")
-            zadnji_ID = db.get_values(secret.Main_sheet_ID(), "B1:B1000")["values"][-1][0]
+            zadnji_ID = self.db.get_values(secret.Main_sheet_ID(), "B1:B1000")["values"][-1][0]
 
             for mail in secret.mail_list():
                 print(f"Mail poslan na {mail}.")
-                db.add_premission(zadnji_ID, mail)
+                self.db.add_premission(zadnji_ID, mail)
 
             print("nov mesec")
             # kreiranje nove tebele
             date_new_month = str(self.datum.year) + "-" + str(self.datum.month)
-            id_new_month, link_new_month = db.create(date_new_month)
+            id_new_month, link_new_month = self.db.create(date_new_month)
 
             #Za normaln delovoanje
-            db.append_values(secret.Main_sheet_ID(), "A1:A1000", "USER_ENTERED", [[date_new_month, id_new_month, link_new_month]])
-            # Samo za testiranje
-            #id_new_month = secret.test_sheet_ID()
+            self.db.append_values(secret.Main_sheet_ID(), "A1:A1000", "USER_ENTERED", [[date_new_month, id_new_month, link_new_month]])
+
             
             #Formatiranje nove preglednice
-            db.format_new_sheet(id_new_month)  
+            self.db.format_sheet(id_new_month)  
                         
 
-        zadnji_ID = db.get_values(secret.Main_sheet_ID(), "B1:B1000")["values"][-1][0]
-
+        zadnji_ID = self.db.get_values(secret.Main_sheet_ID(), "B1:B1000")["values"][-1][0]
+        #zadnji_ID = secret.test_sheet_ID()
         print()
         if len(zdruzeni_dogodki) > 0:
             print(f"Poročilo za {self.datum}:")
@@ -381,29 +395,39 @@ class Dan:
             i = 0
             for dogodek in zdruzeni_dogodki:
                 i += 1
-                prihod = dogodek.prihod
-                odhod = dogodek.odhod
-                t1 = datetime.datetime(self.datum.year, self.datum.month, self.datum.day, prihod.hour, prihod.minute)
-                t2 = datetime.datetime(self.datum.year, self.datum.month, self.datum.day, odhod.hour, odhod.minute)
+                
+                skupni_cas += dogodek.cas
+                print(f"ZT {i+1}: {dogodek.prihod} do {dogodek.odhod}")
 
-                cas = t2 - t1
-                skupni_cas += cas
-                print(f"ZT {i+1}: {prihod} do {odhod}")
+                zadnja_vrstica_F = len(self.db.get_values(zadnji_ID, "F1:F1000")["values"])
+                self.db.update_values(zadnji_ID,
+                                 f"F{zadnja_vrstica_F+1}:I{zadnja_vrstica_F+1}",
+                                 "USER_ENTERED",
+                                 [[str(self.datum),
+                                   str(dogodek.prihod),
+                                   str(dogodek.odhod),
+                                   str(dogodek.cas)]])
 
-                zadnja_vrstica_A = len(db.get_values(zadnji_ID, "A1:A1000")["values"])
-                db.update_values(zadnji_ID, f"A{zadnja_vrstica_A+1}:D{zadnja_vrstica_A+1}", "USER_ENTERED", [[str(self.datum), str(prihod), str(odhod), str(cas)]])
-
-            zadnja_vrstica_E = len(db.get_values(zadnji_ID, "E1:E1000")["values"])
-            db.append_values(zadnji_ID, f"E{zadnja_vrstica_E+1}:F{zadnja_vrstica_E+1}", "USER_ENTERED", [[str(self.datum), str(skupni_cas)]])
+            zadnja_vrstica_J = len(self.db.get_values(zadnji_ID, "J1:J1000")["values"])
+            self.db.append_values(zadnji_ID,
+                             f"J{zadnja_vrstica_J+1}:K{zadnja_vrstica_J+1}",
+                             "USER_ENTERED",
+                             [[str(self.datum),
+                               str(skupni_cas)]])
 
 
 class Event:
-    def __init__(self, prihod, odhod, oseba):
+    def __init__(self, prihod, odhod, oseba, date):
         self.prihod = prihod
         self.odhod = odhod
         self.oseba = oseba
-        #difference = self.prihod - self.odhod
-        #self.cas = difference
+        self.datum = date
+        t1 = datetime.datetime(date.year, date.month, date.day, prihod.hour, prihod.minute)
+        t2 = datetime.datetime(date.year, date.month, date.day, odhod.hour, odhod.minute)
+
+        self.cas = t2 - t1
+        
+
 
 
 # simulacija
@@ -430,7 +454,7 @@ def simulacija_disc(inputi, dnevi, user="User1"):
                 break
 
             if začetek == "+":
-                danes, resp = rezerviraj_termin(sporočilo, user, danes)
+                danes, resp = rezerviraj_termin(sporočilo, user, danes,debug=True)
                 print("BOT: " + resp)
 
             if sporočilo.replace(" ", "") == "!menebo":
