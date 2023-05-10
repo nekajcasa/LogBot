@@ -367,22 +367,9 @@ class Dan:
             # Samo za testiranje
             #id_new_month = secret.test_sheet_ID()
             
-            # Urejanje tebele
-            db.update_values(id_new_month, "A1", "USER_ENTERED",
-                             [['Vsa uporaba']])
-            db.mrge_cells(id_new_month, 0, 4, 0, 1)
-            db.update_values(id_new_month, "E1", "USER_ENTERED",
-                             [['Po dnevih']])
-            db.mrge_cells(id_new_month, 4, 6, 0, 1)
-            db.update_values(id_new_month, "A2:F2", "USER_ENTERED",
-                             [['Dan', 'do', 'do', 'Čas', 'Dan', 'Čas']])          
-            db.update_values(id_new_month, "G1", "USER_ENTERED",
-                             [['Skupno']])
-            db.update_values(id_new_month, "G2", "USER_ENTERED",
-                             [['=sum(F3:F100)']])
-            db.format_cell_time(id_new_month,  6, 7, 1, 2)            
-            
-            
+            #Formatiranje nove preglednice
+            db.format_new_sheet(id_new_month)  
+                        
 
         zadnji_ID = db.get_values(secret.Main_sheet_ID(), "B1:B1000")["values"][-1][0]
 

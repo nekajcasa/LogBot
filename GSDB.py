@@ -126,7 +126,7 @@ class DB():
         ).execute()
         
         
-    def format_cell_time(self, Spreadsheet_ID, Sc, Ec, Sr, Er):
+    def format_cell_time(self, Spreadsheet_ID, Sc, Ec, Sr, Er,form="[hh]:mm"):
         """Združevanje zelic od Sc-StartColumn, Ec-Endcoum,Sr-StartRow,Er-EndRow"""
         spreadsheet = self.service.spreadsheets().get(spreadsheetId=Spreadsheet_ID).execute()
 
@@ -149,7 +149,7 @@ class DB():
                         "userEnteredFormat":{
                             "numberFormat":{
                                 "type": "DATE_TIME",
-                                "pattern": "[hh]:mm"
+                                "pattern": form
                                 }
                             }
                         },
@@ -162,50 +162,76 @@ class DB():
             spreadsheetId=Spreadsheet_ID,
             body={'requests': top_header_format}
         ).execute()
+        
+    def format_sheet(self,Spreadsheet_ID):
+        # Urejanje tebele
+        self.update_values(Spreadsheet_ID, "A1", "USER_ENTERED",
+                         [['Vsa uporaba']])
+        self.mrge_cells(Spreadsheet_ID, 0, 4, 0, 1)
+        self.update_values(Spreadsheet_ID, "E1", "USER_ENTERED",
+                         [['Po dnevih']])
+        self.mrge_cells(Spreadsheet_ID, 4, 6, 0, 1)
+        self.update_values(Spreadsheet_ID, "A2:F2", "USER_ENTERED",
+                         [['Dan', 'do', 'do', 'Čas', 'Dan', 'Čas']])
+        self.format_cell_time(Spreadsheet_ID,  0, 1, 2, 1000,form="dd.mm.yyyy")
+        self.format_cell_time(Spreadsheet_ID,  1, 4, 2, 1000) 
+        self.update_values(Spreadsheet_ID, "G1", "USER_ENTERED",
+                         [['Skupno']])
+        self.format_cell_time(Spreadsheet_ID,  4, 5, 2, 1000,form="dd.mm.yyyy")
+        self.format_cell_time(Spreadsheet_ID,  5, 6, 2, 1000)
+        self.update_values(Spreadsheet_ID, "G2", "USER_ENTERED",
+                         [['=sum(F3:F100)']])
+        self.format_cell_time(Spreadsheet_ID,  6, 7, 1, 2)     
 
 
 if __name__ == '__main__':
+# =============================================================================
+#     db = DB("gs_credentials.json")
+#     Main_ID = secret.Main_sheet_ID()
+#     datum = date(2023, 4, 2)
+# 
+#     if datum.day == 1:
+#         print("pošiljanje stare tabele")
+#         zadnji_ID = db.get_values(Main_ID, "B1:B1000")["values"][-1][0]
+# 
+#         for mail in secret.mail_list():
+#             print(f"Mail poslan na {mail}.")
+#             db.add_premission(zadnji_ID, mail)
+# 
+#         print("nov mesec")
+# 
+#         #date_new_month = str(datum.year)+"-"+str(datum.month)
+#         #id_new_month, link_new_month = db.create(date_new_month)
+# 
+#         #db.append_values(Main_ID,"A1:A1000", "USER_ENTERED",[[date_new_month, id_new_month,link_new_month]])
+# 
+#         # Samo za testiranje
+#         id_new_month = secret.test_sheet_ID()
+#         # Urejanje tebele
+#         db.update_values(id_new_month, "A1", "USER_ENTERED",
+#                          [['Vsa uporaba']])
+# 
+#         db.update_values(id_new_month, "E1", "USER_ENTERED",
+#                          [['Po dnevih']])
+# 
+#         db.update_values(id_new_month, "A2:F2", "USER_ENTERED",
+#                          [['Dan', 'do', 'do', 'Čas', 'Dan', 'Čas']])
+#         db.mrge_cells(id_new_month, 0, 4, 0, 1)
+#         db.mrge_cells(id_new_month, 4, 6, 0, 1)
+# 
+#     zadnji_ID = db.get_values(Main_ID, "B1:B1000")["values"][-1][0]
+#     datum = str(datum)
+#     prihod = "8:00"
+#     odhod = "10:00"
+#     cas = "2:00"
+# 
+#     zadnja_vrstica_A = len(db.get_values(zadnji_ID, "A1:A1000")["values"])
+#     db.update_values(zadnji_ID, f"A{zadnja_vrstica_A+1}:D{zadnja_vrstica_A+1}", "USER_ENTERED", [[datum, prihod, odhod, cas]])
+# 
+#     zadnja_vrstica_E = len(db.get_values(zadnji_ID, "E1:E1000")["values"])
+#     db.append_values(zadnji_ID, f"E{zadnja_vrstica_E+1}:F{zadnja_vrstica_E+1}", "USER_ENTERED", [[datum, cas]])
+# =============================================================================
     db = DB("gs_credentials.json")
-    Main_ID = secret.Main_sheet_ID()
-    datum = date(2023, 4, 2)
-
-    if datum.day == 1:
-        print("pošiljanje stare tabele")
-        zadnji_ID = db.get_values(Main_ID, "B1:B1000")["values"][-1][0]
-
-        for mail in secret.mail_list():
-            print(f"Mail poslan na {mail}.")
-            db.add_premission(zadnji_ID, mail)
-
-        print("nov mesec")
-
-        #date_new_month = str(datum.year)+"-"+str(datum.month)
-        #id_new_month, link_new_month = db.create(date_new_month)
-
-        #db.append_values(Main_ID,"A1:A1000", "USER_ENTERED",[[date_new_month, id_new_month,link_new_month]])
-
-        # Samo za testiranje
-        id_new_month = secret.test_sheet_ID()
-        # Urejanje tebele
-        db.update_values(id_new_month, "A1", "USER_ENTERED",
-                         [['Vsa uporaba']])
-
-        db.update_values(id_new_month, "E1", "USER_ENTERED",
-                         [['Po dnevih']])
-
-        db.update_values(id_new_month, "A2:F2", "USER_ENTERED",
-                         [['Dan', 'do', 'do', 'Čas', 'Dan', 'Čas']])
-        db.mrge_cells(id_new_month, 0, 4, 0, 1)
-        db.mrge_cells(id_new_month, 4, 6, 0, 1)
-
-    zadnji_ID = db.get_values(Main_ID, "B1:B1000")["values"][-1][0]
-    datum = str(datum)
-    prihod = "8:00"
-    odhod = "10:00"
-    cas = "2:00"
-
-    zadnja_vrstica_A = len(db.get_values(zadnji_ID, "A1:A1000")["values"])
-    db.update_values(zadnji_ID, f"A{zadnja_vrstica_A+1}:D{zadnja_vrstica_A+1}", "USER_ENTERED", [[datum, prihod, odhod, cas]])
-
-    zadnja_vrstica_E = len(db.get_values(zadnji_ID, "E1:E1000")["values"])
-    db.append_values(zadnji_ID, f"E{zadnja_vrstica_E+1}:F{zadnja_vrstica_E+1}", "USER_ENTERED", [[datum, cas]])
+    ID="1ZLik3PALAO_UHDoDc98osjC39Z50MtMJkqZB99uJk7g"
+    db.format_sheet(ID)
+    
