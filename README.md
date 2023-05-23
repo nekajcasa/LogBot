@@ -24,7 +24,7 @@ Potrebni paketi:
 
 ## To do:
 * Hranjenje podatkov dneva v Sheets in ne v spremenljivki (Če  se program tekom dneva sesuje)
-* možnost dodanjanja termina za en dan v naprej
+* Možnost dodanjanja termina za en dan naprej
 <!-- 
 * Urediti GCS problemi z izklaplanjem (https://www.digitalocean.com/community/tutorials/nohup-command-in-linux),
 * Hranjenje e-mail naslovov v Sheets namesto v secrets
