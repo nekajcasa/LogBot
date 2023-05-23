@@ -367,10 +367,14 @@ class Dan:
         if self.datum.day == 1:
             print("pošiljanje stare tabele")
             zadnji_ID = self.db.get_values(secret.Main_sheet_ID(), "B1:B1000")["values"][-1][0]
+            
+            mail_list_ID = secret.mail_list_ID()
+            mail_list = self.db.get_values(mail_list_ID, "B2:B1000")['values']
 
-            for mail in secret.mail_list():
-                print(f"Mail poslan na {mail}.")
-                self.db.add_premission(zadnji_ID, mail)
+            
+            for mail in mail_list:
+                print(f"Mail poslan na {mail[0]}.")
+                self.db.add_premission(zadnji_ID, mail[0])
 
             print("nov mesec")
             # kreiranje nove tebele

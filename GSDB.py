@@ -236,5 +236,5 @@ if __name__ == '__main__':
 #     
 # =============================================================================
     db = DB("gs_credentials.json")
-    ID="1QLImEUuw7aagi5O73ADGtC0amjhLsWg1tboOMpGHbf4"
+    ID=secret.mail_list_ID()
     print(db.get_values(ID, "A1:A1000")['values'])
