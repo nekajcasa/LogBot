@@ -369,7 +369,7 @@ class Dan:
             zadnji_ID = self.db.get_values(secret.Main_sheet_ID(), "B1:B1000")["values"][-1][0]
             
             mail_list_ID = secret.mail_list_ID()
-            mail_list = self.db.get_values(mail_list_ID, "B2:B1000")['values']
+            mail_list = self.db.get_values(mail_list_ID, "B3:B1000")['values']
 
             
             for mail in mail_list:

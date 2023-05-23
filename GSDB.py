@@ -31,8 +31,11 @@ class DB():
 
             spreadsheet_Id = spreadsheet.get('spreadsheetId')
             spreadsheet_URL = spreadsheet.get('spreadsheetUrl')
+            
+            mail_list_ID = secret.mail_list_ID()
+            bot_mail = self.get_values(mail_list_ID, "B2")['values'][0][0]
 
-            self.add_premission(spreadsheet_Id, secret.mail_list()[0], role="writer")
+            self.add_premission(spreadsheet_Id, bot_mail, role="writer")
 
             print(f"Spreadsheet ID: {spreadsheet_Id}")
             print(f"Spreadsheet Url: {spreadsheet_URL}")
@@ -237,4 +240,4 @@ if __name__ == '__main__':
 # =============================================================================
     db = DB("gs_credentials.json")
     ID=secret.mail_list_ID()
-    print(db.get_values(ID, "A1:A1000")['values'])
+    print(db.get_values(ID, "B3:B1000")['values'])
