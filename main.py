@@ -89,11 +89,10 @@ class MyClient(discord.Client):
                 if str(i) == "🔑":
                     ima_kluc = True
                     print("Ima kljuc")
-
+            sporocilo = responses.handle_response(user_message)
+            zacetek = sporocilo[0]
             if ima_kluc:
                 if channel == "treningi" or channel == "bot-test":
-                    sporocilo = responses.handle_response(user_message)
-                    zacetek = sporocilo[0]
                     veljavno_sporocilo = False
                     
                     # dodajanje termina
