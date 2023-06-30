@@ -3,7 +3,7 @@ import secret
 import discord
 import responses
 from datetime import date
-from datetime import timedelta
+#from datetime import timedelta
 
 
 class MyClient(discord.Client):
@@ -12,7 +12,7 @@ class MyClient(discord.Client):
 
         # dan vsebuje vse dogodke dneva
         self.danes = responses.Dan(date.today())  # za testiranje date(2023, 4, 26)
-        self.jutri = responses.Dan(date.today()+timedelta(days=1))
+        #self.jutri = responses.Dan(date.today()+timedelta(days=1))
     async def setup_hook(self) -> None:
         # start the task to run in the background
         self.my_background_task.start()
@@ -37,8 +37,9 @@ class MyClient(discord.Client):
 
             # zaključek dneva -> zapis v tabelo, če je konec meseca nova tabela in poročilo
             self.danes.zaključi_dan(zdruzeni_dogodki)
-            self.danes = self.jutri.copy()
-            self.jutri = responses.Dan(date.today()+timedelta(days=1))
+            self.danes = responses.Dan(date.today())
+            #self.danes = self.jutri.copy()
+            #self.jutri = responses.Dan(date.today()+timedelta(days=1))
 
     @my_background_task.before_loop
     async def before_my_task(self):
@@ -97,15 +98,15 @@ class MyClient(discord.Client):
                     
                     # dodajanje termina
                     if zacetek == "+":
-                        if sporocilo[1]=="+":
+                        #if sporocilo[1]=="+":
                             #dodajanje datuma za jutri
-                            self.jutri, resp = responses.rezerviraj_termin(sporocilo[1:], username, self.jutri)
-                            resp = resp+f"(za jutri - {self.jutri.datum.day}.{self.jutri.datum.month})"
-                            veljavno_sporocilo = True
-                        else:
-                            #dodajanje datuma danes
-                            self.danes, resp = responses.rezerviraj_termin(sporocilo, username, self.danes)
-                            veljavno_sporocilo = True
+                            #self.jutri, resp = responses.rezerviraj_termin(sporocilo[1:], username, self.jutri)
+                            #resp = resp+f"(za jutri - {self.jutri.datum.day}.{self.jutri.datum.month})"
+                            #veljavno_sporocilo = True
+                        #else:
+                        #dodajanje datuma danes
+                        self.danes, resp = responses.rezerviraj_termin(sporocilo, username, self.danes)
+                        veljavno_sporocilo = True
                     
                     # brisanje termina
                     if sporocilo.replace(" ", "") == "!menebo":
